@@ -110,7 +110,7 @@ export class AnthropicHandler extends BaseProvider implements SingleCompletionHa
 				const lastUserMsgIndex = userMsgIndices[userMsgIndices.length - 1] ?? -1
 				const secondLastMsgUserIndex = userMsgIndices[userMsgIndices.length - 2] ?? -1
 
-				stream = await this.client.messages.create(
+				stream = await this.client.messages.create.stream(
 					{
 						model: modelId,
 						max_tokens: maxTokens ?? ANTHROPIC_DEFAULT_MAX_TOKENS,
