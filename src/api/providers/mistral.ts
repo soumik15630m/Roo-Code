@@ -188,7 +188,7 @@ export class MistralHandler extends BaseProvider implements SingleCompletionHand
 		const { id: model, temperature } = this.getModel()
 
 		try {
-			const response = await this.client.chat.complete({
+			const response = await this.client.chat.complete.create({
 				model,
 				messages: [{ role: "user", content: prompt }],
 				temperature,
